@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 11:21:58
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 23:22:45
          compiled from "/Sites/cave/prestashop/themes/default-bootstrap/modules/homeslider/homeslider.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:451426627552644b6762c58-42361070%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21340321395526eda55a40e8-78080665%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '4cca74683540529808ad0980dec7b40167cfe3d1' => 
     array (
       0 => '/Sites/cave/prestashop/themes/default-bootstrap/modules/homeslider/homeslider.tpl',
-      1 => 1428416223,
+      1 => 1428586346,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '451426627552644b6762c58-42361070',
+  'nocache_hash' => '21340321395526eda55a40e8-78080665',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552644b67fef87_33918768',
+  'unifunc' => 'content_5526eda5634bf2_46064522',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552644b67fef87_33918768')) {function content_552644b67fef87_33918768($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5526eda5634bf2_46064522')) {function content_5526eda5634bf2_46064522($_smarty_tpl) {?>
 <?php if ($_smarty_tpl->tpl_vars['page_name']->value=='index') {?>
 <!-- Module HomeSlider -->
     <?php if (isset($_smarty_tpl->tpl_vars['homeslider_slides']->value)) {?>
@@ -46,7 +46,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['slide']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['slide']->_loop = true;
 ?>
 					<?php if ($_smarty_tpl->tpl_vars['slide']->value['active']) {?>
-						<li class="homeslider-container">
+						<li class="homeslider-container slide-<?php echo $_smarty_tpl->tpl_vars['slide']->value['id_slide'];?>
+">
 							<div class="background-slide" style="background:url(<?php echo $_smarty_tpl->tpl_vars['link']->value->getMediaLink(((string)@constant('_MODULE_DIR_'))."homeslider/images/".((string)mb_convert_encoding(htmlspecialchars($_smarty_tpl->tpl_vars['slide']->value['image'], ENT_QUOTES, 'UTF-8', true), "HTML-ENTITIES", 'UTF-8')));?>
 ) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;"></div>
 							
@@ -65,7 +66,8 @@ $_smarty_tpl->tpl_vars['slide']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['slide']->key => $_smarty_tpl->tpl_vars['slide']->value) {
 $_smarty_tpl->tpl_vars['slide']->_loop = true;
 ?>
-				<button class="homeslider-button-control"><?php echo $_smarty_tpl->tpl_vars['slide']->value['title'];?>
+				<button class="slide-<?php echo $_smarty_tpl->tpl_vars['slide']->value['id_slide'];?>
+"><?php echo $_smarty_tpl->tpl_vars['slide']->value['title'];?>
 </button>
 			<?php } ?>
 		</div>

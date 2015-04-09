@@ -32,7 +32,7 @@
 			<ul id="homeslider">
 				{foreach from=$homeslider_slides item=slide}
 					{if $slide.active}
-						<li class="homeslider-container">
+						<li class="homeslider-container slide-{$slide.id_slide}">
 							<div class="background-slide" style="background:url({$link->getMediaLink("`$smarty.const._MODULE_DIR_`homeslider/images/`$slide.image|escape:'htmlall':'UTF-8'`")}) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;"></div>
 							{*}<a href="{$slide.url|escape:'html':'UTF-8'}" title="{$slide.legend|escape:'html':'UTF-8'}">
 								<img src="{$link->getMediaLink("`$smarty.const._MODULE_DIR_`homeslider/images/`$slide.image|escape:'htmlall':'UTF-8'`")}"{if isset($slide.size) && $slide.size} {$slide.size}{else} width="100%" height="100%"{/if} alt="{$slide.legend|escape:'htmlall':'UTF-8'}" />
@@ -47,7 +47,7 @@
 		</div>
 		<div class="homeslider-title-controls">
 			{foreach from=$homeslider_slides item=slide}
-				<button class="homeslider-button-control">{$slide.title}</button>
+				<button class="slide-{$slide.id_slide}">{$slide.title}</button>
 			{/foreach}
 		</div>
 	{/if}

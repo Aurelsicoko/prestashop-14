@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 11:22:03
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 23:22:50
          compiled from "/Sites/cave/prestashop/themes/default-bootstrap/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:470274325552644bb154b31-59095019%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17635829985526edaab1f787-20027322%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '93522711877cc6cb0024b56c57ddd9cecaa615c8' => 
     array (
       0 => '/Sites/cave/prestashop/themes/default-bootstrap/footer.tpl',
-      1 => 1427971962,
+      1 => 1428608918,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '470274325552644bb154b31-59095019',
+  'nocache_hash' => '17635829985526edaab1f787-20027322',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552644bb1cd760_87163620',
+  'unifunc' => 'content_5526edaaba5eb8_15179650',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552644bb1cd760_87163620')) {function content_552644bb1cd760_87163620($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5526edaaba5eb8_15179650')) {function content_5526edaaba5eb8_15179650($_smarty_tpl) {?>
 <?php if (!isset($_smarty_tpl->tpl_vars['content_only']->value)||!$_smarty_tpl->tpl_vars['content_only']->value) {?>
 					</div><!-- #center_column -->
 					<?php if (isset($_smarty_tpl->tpl_vars['right_column_size']->value)&&!empty($_smarty_tpl->tpl_vars['right_column_size']->value)) {?>
@@ -42,10 +42,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<!-- Footer -->
 				<div class="footer-container">
 					<footer id="footer"  class="container">
-						<div class="yeah"><?php echo $_smarty_tpl->tpl_vars['HOOK_FOOTER_LANGUE']->value;?>
-</div>
-						<div class="row"><?php echo $_smarty_tpl->tpl_vars['HOOK_FOOTER']->value;?>
-</div>
+						<?php echo $_smarty_tpl->tpl_vars['HOOK_FOOTER_LANGUE']->value;?>
+
+						<?php echo $_smarty_tpl->tpl_vars['HOOK_FOOTER']->value;?>
+
 					</footer>
 				</div><!-- #footer -->
 			<?php }?>

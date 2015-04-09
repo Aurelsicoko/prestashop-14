@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 11:22:00
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-09 23:22:47
          compiled from "/Sites/cave/prestashop/themes/default-bootstrap/modules/blockcms/blockcms.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:404213512552644b8a4a532-04906206%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:408598185526eda7ea98c6-08233495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7282e801f976c7d9213f8fd80fe4c0fe40dd7539' => 
     array (
       0 => '/Sites/cave/prestashop/themes/default-bootstrap/modules/blockcms/blockcms.tpl',
-      1 => 1425636560,
+      1 => 1428611380,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '404213512552644b8a4a532-04906206',
+  'nocache_hash' => '408598185526eda7ea98c6-08233495',
   'function' => 
   array (
   ),
@@ -38,9 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552644b8edbdf2_83610779',
+  'unifunc' => 'content_5526eda8854275_06535929',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552644b8edbdf2_83610779')) {function content_552644b8edbdf2_83610779($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5526eda8854275_06535929')) {function content_5526eda8854275_06535929($_smarty_tpl) {?>
 
 <?php if ($_smarty_tpl->tpl_vars['block']->value==1) {?>
 	<!-- Block CMS module -->
@@ -112,9 +112,7 @@ $_smarty_tpl->tpl_vars['cms_page']->_loop = true;
 	<!-- /Block CMS module -->
 <?php } else { ?>
 	<!-- MODULE Block footer -->
-	<section class="footer-block col-xs-12 col-sm-2" id="block_various_links_footer">
-		<h4><?php echo smartyTranslate(array('s'=>'Information','mod'=>'blockcms'),$_smarty_tpl);?>
-</h4>
+	<section class="footer-block" id="block_various_links_footer">
 		<ul class="toggle-footer">
 			<?php if ($_smarty_tpl->tpl_vars['show_price_drop']->value&&!$_smarty_tpl->tpl_vars['PS_CATALOG_MODE']->value) {?>
 				<li class="item">
