@@ -34,8 +34,8 @@
 				<!-- Footer -->
 				<div class="footer-container">
 					<footer id="footer"  class="container">
-						<div class="yeah">{$HOOK_FOOTER_LANGUE}</div>
-						<div class="row">{$HOOK_FOOTER}</div>
+						{$HOOK_FOOTER_LANGUE}
+						{$HOOK_FOOTER}
 					</footer>
 				</div><!-- #footer -->
 			{/if}

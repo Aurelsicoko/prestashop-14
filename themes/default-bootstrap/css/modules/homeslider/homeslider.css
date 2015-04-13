@@ -20,6 +20,48 @@
   width: 100%;
   text-align: center;
 }
+.homeslider-title-controls button{
+  position:relative;
+  font: 700 12px 'Raleway', serif;
+  color:white;
+  background:none;
+  border:none;
+  text-transform: uppercase;
+  margin:0 25px;
+  outline: none;
+  cursor: auto;
+}
+.homeslider-title-controls button.active::before{
+  content:"";
+  display:block;
+  height:2px;width:38px;
+  background:transparent;
+  background:rgba(255,255,255,.5);
+  position: absolute;
+  top:-12px;left:50%;
+  margin-left:-19px;
+}
+.homeslider-title-controls button::after{
+  content:"";
+  display:block;
+  height:2px;
+  background:white;
+  background:rgba(255,255,255,1);
+  position: absolute;
+  top:-12px;left:50%;
+  margin-left:-19px;
+
+  visibility: hidden;
+  width:0px;
+  -webkit-transition: width 10s linear;
+  -moz-transition: width 10s linear;
+  -o-transition: width 10s linear;
+  transition: width 10s linear;
+}
+.homeslider-title-controls button.active::after{
+  visibility: visible;
+  width:38px;
+}
   @media (max-width: 767px) {
     #homepage-slider {
       width: 100%;
@@ -34,6 +76,19 @@
     height:100%;
     width:100% !important;
     position: absolute !important;
+
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  #homepage-slider #homeslider li.active{
+    z-index:1;
+    visibility: visible;
+    opacity: 1;
   }
   #homepage-slider .homeslider-container {
     position: relative; }
