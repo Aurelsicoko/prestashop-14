@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-04-14 10:26:48
+<?php /* Smarty version Smarty-3.1.19, created on 2015-04-14 17:50:51
          compiled from "/Sites/cave/prestashop/themes/default-bootstrap/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:487176881552ccf4822c2f2-41209805%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1633190691552d375b83de06-38792330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '31bc616ee04ac38ac302b6c0a64bad0931e26bc8' => 
     array (
       0 => '/Sites/cave/prestashop/themes/default-bootstrap/header.tpl',
-      1 => 1428580452,
+      1 => 1429004305,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '487176881552ccf4822c2f2-41209805',
+  'nocache_hash' => '1633190691552d375b83de06-38792330',
   'function' => 
   array (
   ),
@@ -52,13 +52,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'left_column_size' => 0,
     'HOOK_LEFT_COLUMN' => 0,
     'right_column_size' => 0,
-    'cols' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_552ccf484718a7_80579969',
+  'unifunc' => 'content_552d375ba1ac37_55955644',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_552ccf484718a7_80579969')) {function content_552ccf484718a7_80579969($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include '/Sites/cave/prestashop/tools/smarty/plugins/function.implode.php';
+<?php if ($_valid && !is_callable('content_552d375ba1ac37_55955644')) {function content_552d375ba1ac37_55955644($_smarty_tpl) {?><?php if (!is_callable('smarty_function_implode')) include '/Sites/cave/prestashop/tools/smarty/plugins/function.implode.php';
 ?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['language_code']->value, ENT_QUOTES, 'UTF-8', true);?>
@@ -177,14 +176,12 @@ $_smarty_tpl->tpl_vars['js_uri']->_loop = true;
 			</div>
 			<div class="columns-container">
 				<div id="columns" class="container">
-					<?php if ($_smarty_tpl->tpl_vars['page_name']->value!='index'&&$_smarty_tpl->tpl_vars['page_name']->value!='pagenotfound') {?>
-						<?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['tpl_dir']->value)."./breadcrumb.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-
-					<?php }?>
-					<div id="slider_row" class="row">
-						<div id="top_column" class="center_column col-xs-12 col-sm-12"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->smartyHook(array('h'=>"displayTopColumn"),$_smarty_tpl);?>
+					<?php if ($_smarty_tpl->tpl_vars['page_name']->value=='index') {?>
+						<div id="slider_row" class="row">
+							<div id="top_column" class="center_column"><?php echo $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0][0]->smartyHook(array('h'=>"displayTopColumn"),$_smarty_tpl);?>
 </div>
-					</div>
+						</div>
+					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['page_name']->value=='index') {?>
 						<div class="row" style="display:none;">
 					<?php } else { ?>
@@ -196,7 +193,6 @@ $_smarty_tpl->tpl_vars['js_uri']->_loop = true;
 </div>
 						<?php }?>
 						<?php if (isset($_smarty_tpl->tpl_vars['left_column_size']->value)&&isset($_smarty_tpl->tpl_vars['right_column_size']->value)) {?><?php $_smarty_tpl->tpl_vars['cols'] = new Smarty_variable((12-$_smarty_tpl->tpl_vars['left_column_size']->value-$_smarty_tpl->tpl_vars['right_column_size']->value), null, 0);?><?php } else { ?><?php $_smarty_tpl->tpl_vars['cols'] = new Smarty_variable(12, null, 0);?><?php }?>
-						<div id="center_column" class="center_column col-xs-12 col-sm-<?php echo intval($_smarty_tpl->tpl_vars['cols']->value);?>
-">
+						<div id="center_column" class="center_column">
 	<?php }?>
 <?php }} ?>
