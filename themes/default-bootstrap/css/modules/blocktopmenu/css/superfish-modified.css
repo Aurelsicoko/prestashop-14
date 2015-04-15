@@ -43,7 +43,7 @@
   border-radius:4px;
   -webkit-transition: background-color .3s ease;
   transition: background-color .3s ease;}
-  .sf-menu > li:hover {background-color:#f4f4f4;}
+  .category-vins-rouges .sf-menu > li.vins-rouges, .category-vins-blancs .sf-menu > li.vins-blancs, .category-vins-roses .sf-menu > li.vins-roses, .sf-menu > li:hover {background-color:#f4f4f4;}
   @media (max-width: 767px) {
     .sf-menu > li {
       float: none;
