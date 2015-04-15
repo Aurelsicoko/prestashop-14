@@ -1,7 +1,8 @@
 #languages-block-top {
   position: relative;
   display:inline-block;
-  vertical-align: top; }
+  vertical-align: middle;
+  width:20%; }
   @media (max-width: 479px) {
     #languages-block-top {
       width: 25%; } }

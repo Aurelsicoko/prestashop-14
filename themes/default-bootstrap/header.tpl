@@ -97,9 +97,11 @@
 			</div>
 			<div class="columns-container">
 				<div id="columns" class="container">
-					<div id="slider_row" class="row">
-						<div id="top_column" class="center_column col-xs-12 col-sm-12">{hook h="displayTopColumn"}</div>
-					</div>
+					{if $page_name == 'index'}
+						<div id="slider_row" class="row">
+							<div id="top_column" class="center_column">{hook h="displayTopColumn"}</div>
+						</div>
+					{/if}
 					{if $page_name == 'index'}
 						<div class="row" style="display:none;">
 					{else}
@@ -109,5 +111,5 @@
 						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
 						{/if}
 						{if isset($left_column_size) && isset($right_column_size)}{assign var='cols' value=(12 - $left_column_size - $right_column_size)}{else}{assign var='cols' value=12}{/if}
-						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}">
+						<div id="center_column" class="center_column">
 	{/if}

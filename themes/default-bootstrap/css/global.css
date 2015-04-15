@@ -261,9 +261,7 @@ textarea {
 a {
   color: #777;
   text-decoration: none; }
-  a:hover, a:focus {
-    color: #515151;
-    text-decoration: underline; }
+  a:hover, a:focus { }
   a:focus {
     outline: thin dotted #333;
     outline: 5px auto -webkit-focus-ring-color;
@@ -358,25 +356,14 @@ cite {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  line-height: 1.1; }
+  font-weight: 500; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
     line-height: 1;
     color: #999999; }
 
-h1,
-h2,
-h3 {
-  margin-top: 18px;
-  margin-bottom: 9px; }
 
-h4,
-h5,
-h6 {
-  margin-top: 9px;
-  margin-bottom: 9px; }
 
 h1, .h1 {
   font-size: 33px; }
@@ -558,12 +545,16 @@ pre {
     /* 1 */
     display: table;
     /* 2 */ }
+  #footer:before{
+    content:"";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
   .container:after {
     clear: both; }
 
-.row {
-  margin-left: -15px;
-  margin-right: -15px; }
+.row { width:100%; height: 100%;}
 #slider_row{margin:0;height:100%;width:100%;}
 .index .columns-container .center_column{height:100%;width:100%;padding:0;}
   .row:before, .row:after {
@@ -590,7 +581,6 @@ pre {
 .col-sm-2,
 .col-sm-3,
 .col-sm-4,
-header .row #header_logo,
 .col-sm-5,
 .col-sm-6,
 .col-sm-7,
@@ -992,7 +982,7 @@ header .row #header_logo,
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px; }
-  .index .columns-container .container{
+  /*.index */.columns-container .container{
     max-width: 100%;
     height: 100%;}
 
@@ -5512,7 +5502,8 @@ header {
       width: 100%; }
   header .row {
     text-align: center;
-    position: relative; }
+    position: relative;
+    width:100%; }
     header .row > .container {
       position: relative; }
     header .row #header_logo { }
@@ -5531,6 +5522,53 @@ header {
 .ie8 #header #header_logo {
   width: 350px; }
 
+#center_column{
+  width:100%;
+  height:100%; 
+}
+#center_column .category-page-link{
+  height:30px;
+  position:absolute;
+  overflow: hidden;
+  top:50%;margin-top:-15px;
+  font: 600 12px 'Raleway', sans-serif;
+  font-variant: small-caps;
+  color: #000;
+}
+#center_column .category-page-link.left{
+  left:40px;
+}
+#center_column .category-page-link.left::before{
+  content:"";
+  display:block;
+  width:75px;height:11px;
+  background:url("../img/left-arrow.png") no-repeat center center;
+  position:absolute;
+  bottom:0;
+  left:-55px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;  
+}
+#center_column .category-page-link.left:hover::before{
+  left:0;
+}
+#center_column .category-page-link.right{
+  right:40px;
+}
+#center_column .category-page-link.right::after{
+  content:"";
+  display:block;
+  width:75px;height:11px;
+  background:url("../img/right-arrow.png") no-repeat center center;
+  position:absolute;
+  bottom:0;
+  right:-55px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;  
+}
+#center_column .category-page-link.right:hover::after{
+  right:0;
+}
 #center_column .page_product_box h3 {
   color: #555454;
   text-transform: uppercase;
@@ -6034,13 +6072,13 @@ table.table_block td {
         font-size: 14px; } }
 
 .price {
-  font-size: 13px;
-  color: #777;
+  font-size: 12px;
+  color: #9daab4;
   white-space: nowrap; }
 
 .price.product-price {
-  font: 600 21px/26px "Open Sans", sans-serif;
-  color: #333; }
+  font-family: "Raleway", sans-serif;
+  font-weight: 600; }
 
 .old-price {
   color: #6f6f6f;
@@ -7013,20 +7051,24 @@ div.star a:hover {
     width: 20px; }
 
 .footer-container {
-  background-color: #fff; height:4%; }
+  background-color: #fff; height:4%;
+  position: relative;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.3);
+   }
   @media (min-width: 768px) {
     .footer-container { } }
   .footer-container .container { }
   .footer-container #footer {
     color: #777777;
     position:relative;
-    top:50%;
-    margin-top:-9px; }
+    height:100%; }
     .footer-container #footer .row {
       position: relative; }
     .footer-container #footer ul.row {
       position: static; }
-    .footer-container #footer .footer-block { display:inline-block;vertical-align: top;float:right;}
+    .footer-container #footer .footer-block { display:inline-block;vertical-align: middle;width: 79%;text-align: right;}
       @media (max-width: 767px) {
         .footer-container #footer .footer-block {
           margin-top: 20px; } }
