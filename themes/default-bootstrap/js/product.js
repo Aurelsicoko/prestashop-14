@@ -157,14 +157,7 @@ $(document).ready(function()
 				$('.jqzoom img').attr('src', new_src).parent().attr('href', new_src);
 		}
 
-		$('.jqzoom').jqzoom({
-			zoomType: 'innerzoom', //innerzoom/standard/reverse/drag
-			zoomWidth: 458, //zooming div default width(default width value is 200)
-			zoomHeight: 458, //zooming div default width(default height value is 200)
-			xOffset: 21, //zooming div default offset(default offset value is 10)
-			yOffset: 0,
-			title: false
-		});
+
 
 	}
 	if (typeof(contentOnly) != 'undefined' && !contentOnly)
