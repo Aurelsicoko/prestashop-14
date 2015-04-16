@@ -1,7 +1,7 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
 .primary_block {
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 40px; }
 
 .top-hr {
@@ -41,7 +41,6 @@ a.fancybox-nav {
       width: 280px;
       margin: 0 auto; } }
   .pb-left-column #image-block img {
-    background: #fbfbfb;
     width: 100%; }
   .pb-left-column #image-block #view_full_size .span_link {
     position: absolute;
