@@ -132,15 +132,17 @@
 							{hook h="displayProductPriceBlock" product=$product type="unit_price"}
 						{/if}
 					</div>
+					{*}
 					{if ($product.quantity > 0)}
 						<p class="quantity-product">{$product.quantity} bouteilles restantes</p>
 					{/if}
+					{/*}
 					{/if}
 				</div>
 			</div><!-- .product-container> -->
 			<div class="button-container">
 				<a class="details-link" href="{$product.link|escape:'html':'UTF-8'}" title="{l s='View'}">
-					<p><button>{if (isset($product.customization_required) && $product.customization_required)}{l s='Customize'}{else}{l s='More'}{/if}</button></p>
+					{*}<p><button>{if (isset($product.customization_required) && $product.customization_required)}{l s='Customize'}{else}{l s='More'}{/if}</button></p>{/*}
 				</a>
 			</div>
 		</li>

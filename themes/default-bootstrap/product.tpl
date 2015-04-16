@@ -276,6 +276,7 @@
 		</div>
 		<!-- end center infos-->
 		<!-- center right-info -->
+		{*}
 		<div class="pb-right-column col-xs-12 col-sm-4 col-md-4">
 			<h4>famille</h4>
 			<p>Sec, rosé, épicé</p>
@@ -287,6 +288,7 @@
 			<p>Mettre en carafe 1 heure avant de servir</p>
 			<a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}">test</a>
 		</div>
+		{/*}
 		<!-- end right-info -->
 	</div> <!-- end primary_block -->
 	{if !$content_only}
