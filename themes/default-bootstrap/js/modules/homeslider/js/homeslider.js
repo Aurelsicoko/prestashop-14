@@ -23,7 +23,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
-
+var timer;
 $(document).ready(function(){
 
 	if (typeof(homeslider_speed) == 'undefined')
@@ -62,6 +62,16 @@ $(document).ready(function(){
 
 	$('#homeslider li:first-child, .homeslider-title-controls button:first-child').addClass('active');
 	automaticSlide();
+	$('.homeslider-title-controls button').click(function(){
+		if(!$(this).hasClass('active')){
+			clearTimeout(timer);
+			$('.homeslider-title-controls button').removeClass('active');
+			$(this).addClass('active');
+			$('#homeslider li').removeClass('active');
+			$('#homeslider li.'+$(this).attr('class').replace(' active','')).addClass('active');
+			automaticSlide();
+		}
+	});
 
 	// $('.homeslider-title-controls button').click(function(){
 	// 	if(!($(this).hasClass('active'))){
@@ -76,7 +86,7 @@ $(document).ready(function(){
 function automaticSlide(){
 	var buttonActive = $('.homeslider-title-controls button.active');
 	if($(buttonActive).index()!=$('.homeslider-title-controls button').length-1){
-		setTimeout(function(){
+		timer = setTimeout(function(){
 			$('#homeslider li').removeClass('active');
 			$('#homeslider li.'+$(buttonActive).attr('class').replace(' active','')).next().addClass('active');
 			$('.homeslider-title-controls button').removeClass('active');
@@ -84,7 +94,7 @@ function automaticSlide(){
 			automaticSlide();
 		}, 10000);
 	}else{
-		setTimeout(function(){
+		timer = setTimeout(function(){
 			$('#homeslider li').removeClass('active');
 			$('#homeslider li:first-child').addClass('active');
 			$('.homeslider-title-controls button').removeClass('active');
