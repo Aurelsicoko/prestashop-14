@@ -29,7 +29,7 @@
   text-transform: uppercase;
   margin:0 25px;
   outline: none;
-  cursor: auto;
+  cursor: pointer;
 }
 .homeslider-title-controls button.active::before{
   content:"";

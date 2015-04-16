@@ -34,7 +34,9 @@ class Maps extends Module {
       !$this->registerHook('leftColumn') ||
       !$this->registerHook('header') ||
       (!Configuration::updateValue('MAPS', 'loaded') &&
-      !Configuration::updateValue('TEST', 'loaded'))
+      !Configuration::updateValue('EMAIL', '') &&
+      !Configuration::updateValue('TEL', '') &&
+      !Configuration::updateValue('FAX', ''))
     )
       return false;
    
@@ -45,7 +47,9 @@ class Maps extends Module {
   {
     if (!parent::uninstall() ||
       (!Configuration::deleteByName('MAPS') &&
-      !Configuration::deleteByName('TEST'))
+      !Configuration::deleteByName('EMAIL') &&
+      !Configuration::deleteByName('TEL') &&
+      !Configuration::deleteByName('FAX'))
     )
       return false;
    
@@ -59,7 +63,9 @@ class Maps extends Module {
       if (Tools::isSubmit('submit'.$this->name))
       {
           $my_module_name = strval(Tools::getValue('MAPS'));
-          $test = strval(Tools::getValue('TEST'));
+          $email = strval(Tools::getValue('EMAIL'));
+          $tel = strval(Tools::getValue('TEL'));
+          $fax = strval(Tools::getValue('FAX'));
           if (!$my_module_name
             || empty($my_module_name)
             || !Validate::isGenericName($my_module_name))
@@ -67,7 +73,9 @@ class Maps extends Module {
           else
           {
               Configuration::updateValue('MAPS', $my_module_name);
-              Configuration::updateValue('TEST', $test);
+              Configuration::updateValue('EMAIL', $email);
+              Configuration::updateValue('TEL', $tel);
+              Configuration::updateValue('FAX', $fax);
               $output .= $this->displayConfirmation($this->l('Settings updated'));
           }
       }
@@ -94,10 +102,24 @@ class Maps extends Module {
               ),
               array(
                   'type' => 'text',
-                  'label' => $this->l('Test'),
-                  'name' => 'TEST',
+                  'label' => $this->l('Enter your mail'),
+                  'name' => 'EMAIL',
                   'size' => 20,
-                  'required' => true
+                  'required' => false
+              ),
+              array(
+                  'type' => 'text',
+                  'label' => $this->l('Enter your phone number'),
+                  'name' => 'TEL',
+                  'size' => 20,
+                  'required' => false
+              ),
+              array(
+                  'type' => 'text',
+                  'label' => $this->l('Enter your fax'),
+                  'name' => 'FAX',
+                  'size' => 20,
+                  'required' => false
               )
           ),
           'submit' => array(
@@ -138,7 +160,9 @@ class Maps extends Module {
        
       // Load current value
       $helper->fields_value['MAPS'] = Configuration::get('MAPS');
-      $helper->fields_value['TEST'] = Configuration::get('TEST');
+      $helper->fields_value['EMAIL'] = Configuration::get('EMAIL');
+      $helper->fields_value['TEL'] = Configuration::get('TEL');
+      $helper->fields_value['FAX'] = Configuration::get('FAX');
        
       return $helper->generateForm($fields_form);
   }
@@ -149,7 +173,9 @@ class Maps extends Module {
     //on envoie des variables à smarty
     $this->context->smarty->assign(array(
       'my_config' => Configuration::get('MAPS'),
-      'test' => Configuration::get('TEST'),
+      'email' => Configuration::get('EMAIL'),
+      'tel' => Configuration::get('TEL'),
+      'fax' => Configuration::get('FAX'),
       'my_link' => $this->context->link->getModuleLink('maps', 'display')
     )); 
     
