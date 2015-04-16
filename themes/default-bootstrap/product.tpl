@@ -57,8 +57,7 @@
 			</p>
 		{/if}
 		<div class="hidden-sm hidden-xs col-md-1">
-			<div class="arrow">
-  		</div>
+			<a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}"><div class="arrow"></div></a>
 		</div>
 		<!-- left infos-->
 		<div class="pb-left-column col-xs-12 col-sm-4 col-md-3">

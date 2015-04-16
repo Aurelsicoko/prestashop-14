@@ -1,8 +1,8 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
 .primary_block {
-  margin-top: 100px;
-  margin-bottom: 40px; }
+  padding-top: 100px;
+  padding-bottom: 40px; }
 
 .top-hr {
   background: #C4C4C4;

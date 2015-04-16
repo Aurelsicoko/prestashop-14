@@ -4,8 +4,8 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
 .primary_block {
-	margin-top: 100px;
-	margin-bottom: 40px;
+	padding-top: 100px;
+	padding-bottom: 40px;
 }
 .top-hr{
 	background: $top-line-color;
@@ -512,7 +512,7 @@ span.view_scroll_spacer {
 		}
 	}
 }
-
+  
 .arrow {
   margin: 10% auto 0 auto;
   width: 20px;
