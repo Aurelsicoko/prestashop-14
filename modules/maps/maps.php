@@ -33,7 +33,8 @@ class Maps extends Module {
     if (!parent::install() ||
       !$this->registerHook('leftColumn') ||
       !$this->registerHook('header') ||
-      !Configuration::updateValue('MAPS', 'loaded')
+      (!Configuration::updateValue('MAPS', 'loaded') &&
+      !Configuration::updateValue('TEST', 'loaded'))
     )
       return false;
    
@@ -43,7 +44,8 @@ class Maps extends Module {
   public function uninstall()
   {
     if (!parent::uninstall() ||
-      !Configuration::deleteByName('MAPS')
+      (!Configuration::deleteByName('MAPS') &&
+      !Configuration::deleteByName('TEST'))
     )
       return false;
    
@@ -57,6 +59,7 @@ class Maps extends Module {
       if (Tools::isSubmit('submit'.$this->name))
       {
           $my_module_name = strval(Tools::getValue('MAPS'));
+          $test = strval(Tools::getValue('TEST'));
           if (!$my_module_name
             || empty($my_module_name)
             || !Validate::isGenericName($my_module_name))
@@ -64,6 +67,7 @@ class Maps extends Module {
           else
           {
               Configuration::updateValue('MAPS', $my_module_name);
+              Configuration::updateValue('TEST', $test);
               $output .= $this->displayConfirmation($this->l('Settings updated'));
           }
       }
@@ -83,8 +87,15 @@ class Maps extends Module {
           'input' => array(
               array(
                   'type' => 'text',
-                  'label' => $this->l('Enter the place value for your Google Maps'),
+                  'label' => $this->l('Enter your address'),
                   'name' => 'MAPS',
+                  'size' => 20,
+                  'required' => true
+              ),
+              array(
+                  'type' => 'text',
+                  'label' => $this->l('Test'),
+                  'name' => 'TEST',
                   'size' => 20,
                   'required' => true
               )
@@ -127,6 +138,7 @@ class Maps extends Module {
        
       // Load current value
       $helper->fields_value['MAPS'] = Configuration::get('MAPS');
+      $helper->fields_value['TEST'] = Configuration::get('TEST');
        
       return $helper->generateForm($fields_form);
   }
@@ -137,6 +149,7 @@ class Maps extends Module {
     //on envoie des variables à smarty
     $this->context->smarty->assign(array(
       'my_config' => Configuration::get('MAPS'),
+      'test' => Configuration::get('TEST'),
       'my_link' => $this->context->link->getModuleLink('maps', 'display')
     )); 
     
