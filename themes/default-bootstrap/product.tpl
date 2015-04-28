@@ -34,7 +34,6 @@
 		{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL, $priceDisplayPrecision)}
 		{assign var='productPriceWithoutReduction' value=$product->getPriceWithoutReduct(true, $smarty.const.NULL, $priceDisplayPrecision)}
 	{/if}
-	{$product->provenance}
 <div itemscope itemtype="http://schema.org/Product" style="height:100%;">
 	<div class="primary_block row">
 		{if isset($adminActionDisplay) && $adminActionDisplay}
@@ -142,22 +141,34 @@
 				<span class="editable" itemprop="sku">{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
 			</p>
 			{if $product->description || $packItems|@count > 0}
-			<div class="provenance">
-				<h4>Provenance</h4>
-				<p>Chilli</p>
-			</div>
-			<div class="producteur">
-				<h4>Producteur</h4>
-				<p>Concha y Toro</p>
-			</div>
-			<div class="alcool">
-				<h4>Alcool</h4>
-				<p>14,5%</p>
-			</div>
+			{if $product->provenance}
+				<div class="provenance">
+					<h4>{l s='Provenance'}</h4>
+					<p>{$product->provenance}</p>
+				</div>
+			{/if}
+			{if $product->producteur}
+				<div class="producteur">
+					<h4>{l s='Producer'}</h4>
+					<p>{$product->producteur}</p>
+				</div>
+			{/if}
+			{if $product->alcool}
+				<div class="alcool">
+					<h4>{l s='Alcohol'}</h4>
+					<p>{$product->alcool}</p>
+				</div>
+			{/if}
+			{if $product->sucre}
+				<div class="alcool">
+					<h4>{l s='Sugar'}</h4>
+					<p>{$product->sucre}</p>
+				</div>
+			{/if}
 				<div id="short_description_block">
-					{if $product->description}
-						<h4>Notes de dégustation</h4>
-						<div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description}</div>
+					{if $product->note_degustation}
+						<h4>{l s='Tasting notes'}</h4>
+						<div id="short_description_content" class="rte align_justify" itemprop="description">{$product->note_degustation}</div>
 					{/if}
 
 					<!--{if $packItems|@count > 0}
