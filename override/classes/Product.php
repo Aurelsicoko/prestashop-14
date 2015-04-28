@@ -42,7 +42,7 @@ class Product extends ProductCore
 	public $producteur;
 	public $alcool;
 	public $sucre;
-	public $note_degustations;
+	public $note_degustation;
 
 	public static $definition = array(
 		'table' => 'product',

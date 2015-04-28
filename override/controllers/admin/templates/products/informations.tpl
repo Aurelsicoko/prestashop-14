@@ -172,7 +172,8 @@
 			</span>
 		</label>
 		<div class="col-lg-5">
-			<input type="text" id="provenance" name="provenance" value="{$product->provenance|htmlentitiesUTF8}" />
+
+			<input type="text" id="provenance" name="provenance" value="{$product->provenance[1]|htmlentitiesUTF8}" />
 		</div>
 	</div>
 
@@ -184,7 +185,7 @@
 			</span>
 		</label>
 		<div class="col-lg-5">
-			<input type="text" id="producteur" name="producteur" value="{$product->producteur|htmlentitiesUTF8}" />
+			<input type="text" id="producteur" name="producteur" value="{$product->producteur[1]|htmlentitiesUTF8}" />
 		</div>
 	</div>
 
@@ -196,7 +197,7 @@
 			</span>
 		</label>
 		<div class="col-lg-5">
-			<input type="text" id="alcool" name="alcool" value="{$product->alcool|htmlentitiesUTF8}" />
+			<input type="text" id="alcool" name="alcool" value="{$product->alcool[1]|htmlentitiesUTF8}" />
 		</div>
 	</div>
 
@@ -208,7 +209,7 @@
 			</span>
 		</label>
 		<div class="col-lg-5">
-			<input type="text" id="sucre" name="sucre" value="{$product->sucre|htmlentitiesUTF8}" />
+			<input type="text" id="sucre" name="sucre" value="{$product->sucre[1]|htmlentitiesUTF8}" />
 		</div>
 	</div>
 
