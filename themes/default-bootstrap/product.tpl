@@ -34,13 +34,9 @@
 		{assign var='productPrice' value=$product->getPrice(false, $smarty.const.NULL, $priceDisplayPrecision)}
 		{assign var='productPriceWithoutReduction' value=$product->getPriceWithoutReduct(true, $smarty.const.NULL, $priceDisplayPrecision)}
 	{/if}
-<div itemscope itemtype="http://schema.org/Product">
+	{$product->provenance}
+<div itemscope itemtype="http://schema.org/Product" style="height:100%;">
 	<div class="primary_block row">
-		{if !$content_only}
-			<div class="container">
-
-			</div>
-		{/if}
 		{if isset($adminActionDisplay) && $adminActionDisplay}
 			<div id="admin-action">
 				<p>{l s='This product is not visible to your customers.'}
@@ -60,14 +56,14 @@
 			<a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}"><div class="arrow"></div></a>
 		</div>
 		<!-- left infos-->
-		<div class="pb-left-column col-xs-12 col-sm-4 col-md-3">
+		<div class="pb-left-column col-xs-12 col-sm-4 col-md-3" style="height:100%;">
 			<!-- product img-->
-			<div id="image-block" class="clearfix">
+			<div id="image-block" style="height:100%;" class="clearfix">
 				{if $have_image}
-					<span id="view_full_size">
+					<span id="view_full_size" style="height:100%">
 						{if $jqZoomEnabled && $have_image && !$content_only}
-							<a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" itemprop="url">
-								<img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
+							<a class="jqzoom" style="height:100%;" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" itemprop="url">
+								<img itemprop="image" style="height:100%;width:auto;" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
 							</a>
 						{else}
 							<img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>

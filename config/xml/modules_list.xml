@@ -121,6 +121,7 @@
 		<module name="brinkscheckout"/>
 		<module name="clickline"/>
 		<module name="desjardins"/>
+		<module name="dpdfrance"/>
 		<module name="dpdpoland"/>
 		<module name="ebay"/>
 		<module name="ecopresto"/>

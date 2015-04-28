@@ -25,18 +25,33 @@
 {include file="$tpl_dir./errors.tpl"}
 {if isset($category)}
 	{if $category->id AND $category->active}
-
-        {if ($category->link_rewrite)!='vins-blancs'}
-            <a class="category-page-link left" href="{$link->getCategoryLink(12, 'vins-blancs')|escape:'html':'UTF-8'}">Vins blancs</a>
+        {if ($category->link_rewrite)!='vins-blancs' && ($category->link_rewrite)!='white-wines'}
+        	{if $lang_iso =='fr'}
+	            <a class="category-page-link left" href="{$link->getCategoryLink(12, 'vins-blancs')|escape:'html':'UTF-8'}">Vins blancs</a>
+			{else}
+	            <a class="category-page-link left" href="{$link->getCategoryLink(12, 'white-wines')|escape:'html':'UTF-8'}">White wines</a>
+	        {/if}
         {/if}
-        {if ($category->link_rewrite)!='vins-rouges'}
-            <a class="category-page-link right" href="{$link->getCategoryLink(13, 'vins-rouges')|escape:'html':'UTF-8'}">Vins rouges</a>
+        {if ($category->link_rewrite)!='vins-rouges' && ($category->link_rewrite)!='red-wines'}
+            {if $lang_iso == 'fr'}
+	            <a class="category-page-link right" href="{$link->getCategoryLink(13, 'vins-rouges')|escape:'html':'UTF-8'}">Vins rouges</a>
+			{else}
+	            <a class="category-page-link right" href="{$link->getCategoryLink(13, 'red-wines')|escape:'html':'UTF-8'}">Red wines</a>
+	        {/if}
         {/if}
-        {if ($category->link_rewrite)!='vins-roses' && ($category->link_rewrite)=='vins-blancs'}
-            <a class="category-page-link left" href="{$link->getCategoryLink(14, 'vins-roses')|escape:'html':'UTF-8'}">Vins rosés</a>
+        {if (($category->link_rewrite)!='vins-roses' && ($category->link_rewrite)=='vins-blancs') || (($category->link_rewrite)!='rose-wines' && ($category->link_rewrite)=='white-wines')}
+            {if $lang_iso =='fr'}
+	            <a class="category-page-link left" href="{$link->getCategoryLink(14, 'vins-roses')|escape:'html':'UTF-8'}">Vins rosés</a>
+			{else}
+	            <a class="category-page-link left" href="{$link->getCategoryLink(14, 'rose-wines')|escape:'html':'UTF-8'}">Rosé wines</a>
+	        {/if}
         {/if}
-        {if ($category->link_rewrite)!='vins-roses' && ($category->link_rewrite)=='vins-rouges'}
-            <a class="category-page-link right" href="{$link->getCategoryLink(14, 'vins-roses')|escape:'html':'UTF-8'}">Vins rosés</a>
+        {if (($category->link_rewrite)!='vins-roses' && ($category->link_rewrite)=='vins-rouges') || (($category->link_rewrite)!='rose-wines' && ($category->link_rewrite)=='red-wines')}
+        	{if $lang_iso =='fr'}
+	            <a class="category-page-link right" href="{$link->getCategoryLink(14, 'vins-roses')|escape:'html':'UTF-8'}">Vins rosés</a>
+			{else}
+	            <a class="category-page-link right" href="{$link->getCategoryLink(14, 'rose-wines')|escape:'html':'UTF-8'}">Rosé wines</a>
+	        {/if}
         {/if}
 
 		{if isset($subcategories)}

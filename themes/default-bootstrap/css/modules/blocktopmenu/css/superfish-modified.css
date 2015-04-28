@@ -72,9 +72,9 @@
     width:88px;
     height:76px;
     text-align: center; }
-  .sf-menu > li > a.vins-blancs{background: url("../img/white-bottle.png") no-repeat top center;}
-  .sf-menu > li > a.vins-rouges{background: url("../img/red-bottle.png") no-repeat top center;}
-  .sf-menu > li > a.vins-roses{background: url("../img/rose-bottle.png") no-repeat top center;}
+  .sf-menu > li > a.vins-blancs, .sf-menu > li > a.white-wines{background: url("../img/white-bottle.png") no-repeat top center;}
+  .sf-menu > li > a.vins-rouges, .sf-menu > li > a.red-wines{background: url("../img/red-bottle.png") no-repeat top center;}
+  .sf-menu > li > a.vins-roses, .sf-menu > li > a.rose-wines{background: url("../img/rose-bottle.png") no-repeat top center;}
   .sf-menu > li.sfHover > a,
   .sf-menu > li > a:hover, .sf-menu > li.sfHoverForce > a {
     
