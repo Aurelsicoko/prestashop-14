@@ -263,12 +263,13 @@
   position: absolute;
   display: none;
   z-index: 99;
-  width: 84%;
+  width: 930px;
   margin-right: 8%;
   margin-left: 8%;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  border-radius: 4px; }
+  border-radius: 4px; 
+  right:-200px;}
   #layer_cart .layer_cart_product {
     padding: 30px 30px 30px 30px;
     overflow: hidden;

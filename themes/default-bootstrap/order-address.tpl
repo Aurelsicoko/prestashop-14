@@ -29,7 +29,7 @@
 	<h1 class="page-heading">{l s='Addresses'}</h1>
 	{include file="$tpl_dir./order-steps.tpl"}
 	{include file="$tpl_dir./errors.tpl"}
-		<form action="{$link->getPageLink($back_order_page, true)|escape:'html':'UTF-8'}" method="post">
+		<form action="{$link->getPageLink($back_order_page, true)|escape:'html':'UTF-8'}" style="height: 500px;overflow-y: scroll;" method="post">
 {else}
 	{assign var="back_order_page" value="order-opc.php"}
 	<h1 class="page-heading step-num"><span>1</span> {l s='Addresses'}</h1>
