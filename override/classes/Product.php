@@ -52,17 +52,17 @@ class Product extends ProductCore
 		'fields' => array(
 			
 			/* Custom fields */
-			'provenance' => 				array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false, 'size' => 128),
-			'producteur' => 				array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false, 'size' => 128),
-			'alcool' => 					array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false, 'size' => 128),
-			'sucre' => 						array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false, 'size' => 128),
+			'provenance' => 				array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false),
+			'producteur' => 				array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false),
+			'alcool' => 					array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false),
+			'sucre' => 						array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isString', 'required' => false),
 			'note_degustation' => 			array('type' => self::TYPE_HTML, 'lang' => true, 'validate' => 'isCleanHtml'),
 
 			/* Classic fields */
 			'id_shop_default' => 			array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
 			'id_manufacturer' => 			array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
 			'id_supplier' => 				array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
-			'reference' => 					array('type' => self::TYPE_STRING, 'validate' => 'isReference', 'size' => 32),
+			'reference' => 					array('type' => self::TYPE_STRING, 'validate' => 'isReference'),
 			'supplier_reference' => 		array('type' => self::TYPE_STRING, 'validate' => 'isReference', 'size' => 32),
 			'location' => 					array('type' => self::TYPE_STRING, 'validate' => 'isReference', 'size' => 64),
 			'width' => 						array('type' => self::TYPE_FLOAT, 'validate' => 'isUnsignedFloat'),

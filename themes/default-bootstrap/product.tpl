@@ -267,8 +267,8 @@
 					{hook h="displayProductPriceBlock" product=$product type="weight"}
 					<div class="clear"></div>
 					<div class="livraison-info">
-						<p>Livraison standard: 3 jours ouvrés</p>
-						<p>Paiement sécurisé</p>
+						<p>{l s='Standard Delivery: 3 working days'}</p>
+						<p>{l s='Secure payment'}</p>
 					</div>
 				</div> <!-- end content_prices -->
 				<div class="box-cart-bottom col-md-4">
