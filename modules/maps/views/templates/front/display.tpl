@@ -8,16 +8,16 @@
 <div class="informations">
 	<div>
 		<div>
-			<p><span>Adresse</span><br/>{if isset($my_config) && $my_config}{$my_config}{else}Paris{/if}</p>
+			<p><span>{l s='Adresse'}</span><br/>{if isset($my_config) && $my_config}{$my_config}{else}Paris{/if}</p>
 		</div>
 		<div>
-			<p><span>Email</span><br/>{if isset($email) && $email}{$email}{else}email@gmail.com{/if}</p>
+			<p><span>{l s='Email'}</span><br/>{if isset($email) && $email}{$email}{else}email@gmail.com{/if}</p>
 		</div>
 		<div>
-			<p><span>Tel</span><br/>{if isset($tel) && $tel}{$tel}{else}01 02 03 04 05{/if}</p>
+			<p><span>{l s='Phone'}</span><br/>{if isset($tel) && $tel}{$tel}{else}01 02 03 04 05{/if}</p>
 		</div>
 		<div>
-			<p><span>Fax</span><br/>{if isset($fax) && $fax}{$fax}{else}01 02 03 04 05{/if}</p>
+			<p><span>{l s='Fax'}</span><br/>{if isset($fax) && $fax}{$fax}{else}01 02 03 04 05{/if}</p>
 		</div>
 	</div>
 </div>
