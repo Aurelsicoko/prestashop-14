@@ -29,6 +29,10 @@
 a.fancybox-nav {
   outline: 0; }
 
+  .ctabuy{
+    font-weight: 600;
+  }
+
 /* .pb-left-column ***************************************************************************** */
 .pb-left-column #image-block {
   position: relative;
@@ -41,7 +45,11 @@ a.fancybox-nav {
       width: 280px;
       margin: 0 auto; } }
   .pb-left-column #image-block img {
-    width: 100%; }
+      margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    display: block;
+  }
   .pb-left-column #image-block #view_full_size .span_link {
     position: absolute;
     bottom: 20px;
@@ -273,11 +281,13 @@ span.view_scroll_spacer {
 
 .producteur, .provenance, .alcool {
   display: inline-block;
-  width: 32%; }
+  width: 24%; }
   .producteur h4, .provenance h4, .alcool h4 {
     font-weight: bold;
     color: black;
-    margin-bottom: 4px; }
+    margin-bottom: 4px; 
+    text-transform: uppercase;
+  }
   .producteur p, .provenance p, .alcool p {
     color: #4c4c4c; }
   .producteur h4, .producteur p, .provenance h4, .provenance p, .alcool h4, .alcool p {
@@ -330,6 +340,7 @@ span.view_scroll_spacer {
     color: #666; }
     .pb-center-column #short_description_block h4 {
       font-size: 12px;
+      text-transform: uppercase;
       margin-bottom: 4px;
       font-weight: bold;
       color: black;
@@ -344,7 +355,7 @@ span.view_scroll_spacer {
         line-height: 19px;
         font-size: 12px; }
   .pb-center-column #buy_block {
-    margin-top: 10px; }
+    margin-top: 30px; }
     .pb-center-column #buy_block label {
       display: inline-block;
       width: 125px;
@@ -826,15 +837,30 @@ table.table-product-discounts {
 
 .discount {
   display: none; }
+  .livraison-info{
+    margin-top: 25px
+  }
 
+.content_prices.col-md-8{
+  padding: 0;
+}
+.livraison-info>p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  color: #b7b7b7;
+  line-height: 12px;
+}
 .our_price_display {
   font-weight: 600;
   line-height: 32px;
   font-family: 'Raleway', sans-serif;
   font-size: 12px;
   color: #9daab4;
-  float: right; }
+}
   .our_price_display .price {
+    font-weight: 500;
+    color: #8b0434;
+    font-size: 32px;
     position: relative;
     top: 8px; }
 

@@ -52,17 +52,17 @@
 			</p>
 		{/if}
 		<div class="hidden-sm hidden-xs col-md-1">
-			<a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}"><div class="arrow"></div></a>
+			<!-- <a href="{$link->getCategoryLink($category->id_category, $category->link_rewrite)|escape:'html':'UTF-8'}"><div class="arrow"></div></a> -->
 		</div>
 		<!-- left infos-->
-		<div class="pb-left-column col-xs-12 col-sm-4 col-md-3" style="height:100%;">
+		<div class="pb-left-column col-xs-12 col-sm-4 col-md-3">
 			<!-- product img-->
-			<div id="image-block" style="height:100%;" class="clearfix">
+			<div id="image-block" class="clearfix">
 				{if $have_image}
-					<span id="view_full_size" style="height:100%">
+					<span id="view_full_size" >
 						{if $jqZoomEnabled && $have_image && !$content_only}
-							<a class="jqzoom" style="height:100%;" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" itemprop="url">
-								<img itemprop="image" style="height:100%;width:auto;" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
+							<a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" itemprop="url">
+								<img itemprop="image"  src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
 							</a>
 						{else}
 							<img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'single_product')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
@@ -132,7 +132,7 @@
 		</div> <!-- end pb-left-column -->
 		<!-- end left infos-->
 		<!-- center infos -->
-		<div class="pb-center-column col-xs-12 col-sm-4 col-md-4">
+		<div class="pb-center-column col-xs-12 col-sm-4 col-md-6">
 			{if $product->online_only}
 				<p class="online_only">{l s='Online only'}</p>
 			{/if}
@@ -140,7 +140,6 @@
 			<p id="product_reference"{if empty($product->reference) || !$product->reference} style="display: none;"{/if}>
 				<span class="editable" itemprop="sku">{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
 			</p>
-			{if $product->description || $packItems|@count > 0}
 			{if $product->provenance}
 				<div class="provenance">
 					<h4>{l s='Provenance'}</h4>
@@ -184,7 +183,6 @@
 						</div>
 					{/if}-->
 				</div> <!-- end short_description_block -->
-			{/if}
 			<!-- availability or doesntExist -->
 			<p id="availability_statut"{if !$PS_STOCK_MANAGEMENT || ($product->quantity <= 0 && !$product->available_later && $allow_oosp) || ($product->quantity > 0 && !$product->available_now) || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
 				{*<span id="availability_label">{l s='Availability:'}</span>*}
@@ -213,16 +211,7 @@
 					<input type="hidden" name="add" value="1" />
 					<input type="hidden" name="id_product_attribute" id="idCombination" value="" />
 				</p>
-				<div class="box-cart-bottom col-md-6">
-					<div{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || (isset($restricted_country_mode) && $restricted_country_mode) || $PS_CATALOG_MODE} class="unvisible"{/if}>
-						<p id="add_to_cart" class="buttons_bottom_block no-print">
-							<button type="submit" name="Submit" class="exclusive">
-								<span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
-							</button>
-						</p>
-					</div>
-				</div> <!-- end box-cart-bottom -->
-				<div class="content_prices col-md-6">
+				<div class="content_prices col-md-8">
 					{if $product->show_price && !isset($restricted_country_mode) && !$PS_CATALOG_MODE}
 						<!-- prices -->
 						<div>
@@ -277,14 +266,27 @@
 					{/if} {*close if for show price*}
 					{hook h="displayProductPriceBlock" product=$product type="weight"}
 					<div class="clear"></div>
+					<div class="livraison-info">
+						<p>Livraison standard: 3 jours ouvrés</p>
+						<p>Paiement sécurisé</p>
+					</div>
 				</div> <!-- end content_prices -->
+				<div class="box-cart-bottom col-md-4">
+					<div{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || (isset($restricted_country_mode) && $restricted_country_mode) || $PS_CATALOG_MODE} class="unvisible"{/if}>
+						<p id="add_to_cart" class="buttons_bottom_block no-print">
+							<button type="submit" name="Submit" class="exclusive">
+								<span class="ctabuy">{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
+							</button>
+						</p>
+					</div>
+				</div> <!-- end box-cart-bottom -->
 			</form>
 			{/if}
 		</div>
 		<!-- end center infos-->
 		<!-- center right-info -->
 		{*}
-		<div class="pb-right-column col-xs-12 col-sm-4 col-md-4">
+		<div class="pb-right-column col-xs-12 col-sm-4 col-md-3">
 			<h4>famille</h4>
 			<p>Sec, rosé, épicé</p>
 			<h4>température de service</h4>
